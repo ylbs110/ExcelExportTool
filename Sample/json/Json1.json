@@ -1,0 +1,178 @@
+[
+    {
+        "key": "key1",
+        "value1": {
+            "a": "1",
+            "b": "2"
+        },
+        "value2": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "攻击": "100",
+        "array": [
+            {
+                "key": "array1",
+                "value1": "2018/16/09 00:00:00",
+                "value2": 1,
+                "value3": 10.0,
+                "value4": 10.0,
+                "value5": 10.0,
+                "value6": false
+            },
+            {
+                "key": "array4",
+                "value1": "2018/19/09 00:00:00",
+                "value2": 2,
+                "value3": 6.14,
+                "value4": 6.141249999999999,
+                "value5": 6.14125,
+                "value6": true
+            },
+            {
+                "key": "array7",
+                "value1": "2018/22/09 00:00:00",
+                "value2": 3,
+                "value3": 3.77,
+                "value4": 3.7714951562499994,
+                "value5": 3.771495156,
+                "value6": true
+            }
+        ],
+        "dic": {
+            "dic1": {
+                "key": "dic1",
+                "value": "value1"
+            },
+            "dic4": {
+                "key": "dic4",
+                "value": "value4"
+            },
+            "dic7": {
+                "key": "dic7",
+                "value": "value7"
+            }
+        }
+    },
+    {
+        "key": "key2",
+        "value1": {
+            "数据格式不对": "字典"
+        },
+        "value2": [
+            "你好",
+            "我很好|你呢"
+        ],
+        "攻击": "100",
+        "防御": "100",
+        "array": [
+            {
+                "key": "array2",
+                "value1": "2018/17/09 00:00:00",
+                "value2": 1,
+                "value3": 8.5,
+                "value4": 8.5,
+                "value5": 8.5,
+                "value6": false
+            },
+            {
+                "key": "array5",
+                "value1": "2018/20/09 00:00:00",
+                "value2": 2,
+                "value3": 5.22,
+                "value4": 5.220062499999999,
+                "value5": 5.2200625,
+                "value6": true
+            },
+            {
+                "key": "array8",
+                "value1": "2018/23/09 00:00:00",
+                "value2": 3,
+                "value3": 3.21,
+                "value4": 3.2057708828124993,
+                "value5": 3.205770883,
+                "value6": true
+            }
+        ],
+        "dic": {
+            "dic2": {
+                "key": "dic2",
+                "value": "value2"
+            },
+            "dic5": {
+                "key": "dic5",
+                "value": "value5"
+            },
+            "dic8": {
+                "key": "dic8",
+                "value": "value8"
+            }
+        }
+    },
+    {
+        "key": "key3",
+        "value1": {
+            "名称": "字典"
+        },
+        "value2": [
+            1
+        ],
+        "攻击": "100",
+        "防御": "100",
+        "闪避": "100",
+        "array": [
+            {
+                "key": "array3",
+                "value1": "2018/18/09 00:00:00",
+                "value2": 2,
+                "value3": 7.23,
+                "value4": 7.225,
+                "value5": 7.225,
+                "value6": true
+            },
+            {
+                "key": "array6",
+                "value1": "2018/21/09 00:00:00",
+                "value2": 3,
+                "value3": 4.44,
+                "value4": 4.437053124999999,
+                "value5": 4.437053125,
+                "value6": true
+            },
+            {
+                "key": "array9",
+                "value1": "2018/24/09 00:00:00",
+                "value2": 4,
+                "value3": 2.72,
+                "value4": 2.7249052503906244,
+                "value5": 2.72490525,
+                "value6": true
+            }
+        ],
+        "dic": {
+            "dic3": {
+                "key": "dic3",
+                "value": "value3"
+            },
+            "dic6": {
+                "key": "dic6",
+                "value": "value6"
+            },
+            "dic9": {
+                "key": "dic9",
+                "value": "value9"
+            }
+        }
+    },
+    {
+        "key": "key4",
+        "value1": {
+            "数据格式不对": ""
+        },
+        "攻击": "100",
+        "防御": "100",
+        "数据格式不对": "攻击:100 防御:100 闪避"
+    }
+]
