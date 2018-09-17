@@ -2,6 +2,6 @@
 
 @echo off
 
-python Lib/ExcelExportTool.py
+python Core/ExcelExportTool.py
 
 pause
