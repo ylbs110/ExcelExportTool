@@ -210,7 +210,11 @@ class ExcelInfo:
 
     def Int(self,num):
         if self.Round:
-            return int(float(num)+0.5)
+            num=float(num)
+            if num>0:
+                return int(num+0.5)
+            else:
+                return int(num-0.5)
         return int(float(num))
     def unknownValue(self,num,ctype):
         if ctype == 2 and num % 1 == 0:  # 如果是整形
