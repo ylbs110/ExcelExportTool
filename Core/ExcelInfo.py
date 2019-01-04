@@ -12,6 +12,10 @@ class NameFlag:
     main='*'
     Type='#'
     error='!'
+
+class SplitFlag:
+    flag1='|'
+    flag2=':'
 class SheetType: 
 
     # 普通表
@@ -291,21 +295,22 @@ class ExcelInfo:
                      result[name]=str(cell)
                      continue
                 if ctype==1:
-                    temp=cell.split(' ')
+                    temp=cell.split(SplitFlag.flag1)
                     if len(temp)>0:
                         for value in temp:
-                            tp=value.split(':')
-                            if len(tp)>1:
+                            tp=value.split(SplitFlag.flag2)
+                            ##if len(tp)==0:
+                            ##    result["数据格式不对"]=str(cell)
+                            if len(tp)==1:
+                                result[tp[0]]=""
+                            elif len(tp)>1:
                                 result[tp[0]]=cell[len(tp[0])+1:len(value)]
-                            else:
-                                result["数据格式不对"]=str(cell)
-                                continue
                 continue
             elif  Type==DataType.ARRAY:
                 if ctype==1:
                     if cell=='':
                         continue
-                    temp=cell.split(' ')
+                    temp=cell.split(SplitFlag.flag1)
                     if len(temp)>0:
                         cell=temp
                     else:
@@ -324,16 +329,18 @@ class ExcelInfo:
                      continue
                 cl={}
                 if ctype==1:
-                    temp=cell.split(' ')
+                    temp=cell.split(SplitFlag.flag1)
                     if len(temp)>0:
                         for value in temp:
-                            tp=value.split(':')
-                            if len(tp)>1:
+                            tp=value.split(SplitFlag.flag2)
+                            if len(tp)==1:
+                                cl[tp[0]]=""
+                            elif len(tp)>1:
                                 cl[tp[0]]=tp[1]
                 if len(cl)>0:
                     cell=cl
-                else:
-                    cell={"数据格式不对":cell}
+                ##else:
+                ##    cell={"数据格式不对":cell}
             else :
                 print("无法识别的类型:[%s,%s],%s,%s"%(rowIndex,index,cell,type(cell)))
             result[name] = cell
