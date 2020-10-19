@@ -125,13 +125,17 @@ class ExcelInfo:
                     if sheetInfo.name not in masterRow:
                         masterRow[sheetInfo.name]={}
                     idHead=sheetInfo.table[r][sheetInfo.idHead.name]
-                    masterRow[sheetInfo.name][idHead]=sheetInfo.table[r]
+                    if idHead in masterRow[sheetInfo.name]:
+                        masterRow[sheetInfo.name][idHead]=sheetInfo.table[r]
             elif sheetInfo.dataType==DataType.Obj:
                 for r in range(0,len(sheetInfo.table)):
                     idHead=sheetInfo.table[r][sheetInfo.idHead.name]
-                    self.sheetInfos[sheetInfo.masterHead.name].sheet[sheetInfo.masterCols[r]][idHead]=sheetInfo.table[r]
+                    if idHead in self.sheetInfos[sheetInfo.masterHead.name].sheet[sheetInfo.masterCols[r]]:
+                        self.sheetInfos[sheetInfo.masterHead.name].sheet[sheetInfo.masterCols[r]][idHead]=sheetInfo.table[r]
             else:
                 for r in range(0,len(sheetInfo.table)):
+                    if sheetInfo.masterCols[r] not in self.sheetInfos[sheetInfo.masterHead.name].sheet:
+                        continue
                     masterRow=self.sheetInfos[sheetInfo.masterHead.name].sheet[sheetInfo.masterCols[r]]
                     if sheetInfo.name not in masterRow:
                         masterRow[sheetInfo.name]=[]
@@ -159,8 +163,8 @@ class ExcelInfo:
                 sheetInfo.name=pair[0].strip()
                 sheetInfo.Type=SheetType.SLAVE
                 sheetInfo.masterHead=HeadSetting(pair[1].strip(),DataType.UNKNOWN,0)
-            if sheetInfo.name.count('#') > 0:
-                pair=sheetInfo.name.split('#')
+            if sheetInfo.name.count(NameFlag.Type) > 0:
+                pair=sheetInfo.name.split(NameFlag.Type)
                 sheetInfo.dataType=pair[1]
                 sheetInfo.name=pair[0]
             self.sheetInfos[sheetInfo.name]=sheetInfo
@@ -235,6 +239,9 @@ class ExcelInfo:
     def parseRow(self,sheet,rowIndex, sheetInfo) :
         if sheetInfo.head==None or len(sheetInfo.head)==0:
             return
+        cell =sheet.cell_value(rowIndex,0)
+        if cell != None and cell[0]==NameFlag.error:
+            return
         result = {}
         if sheetInfo.masterHead!=None:
             cell =sheet.cell_value(rowIndex,sheetInfo.masterHead.index)
@@ -245,7 +252,7 @@ class ExcelInfo:
             headIndex=sheetInfo.idHead.index
         for i in range(0,len(sheetInfo.head)):
             name = sheetInfo.head[i].name
-            if name[0]=='!':
+            if name[0]==NameFlag.error:
                 continue
 
             
@@ -346,11 +353,15 @@ class ExcelInfo:
             result[name] = cell
 
         sheetInfo.table.append(result)
+
         if sheetInfo.idHead!=None:
             if sheetInfo.idHead.name in result:
                 sheetInfo.sheet[result[sheetInfo.idHead.name]]=result
             elif len(result)>0:
                 sheetInfo.sheet[result[list(result)[0]]]=result
+
+
+
 
 
 

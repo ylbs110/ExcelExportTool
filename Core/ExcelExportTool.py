@@ -25,6 +25,8 @@ if __name__ == '__main__':
     for key in paths:
         if key[0]=='~':#忽略打开的Excel文件产生的临时文件
             continue
+        if key[0]=='!':#忽略!开头的文件
+            continue
         pair=key.split('.')
         if len(pair)<=0:
             continue
