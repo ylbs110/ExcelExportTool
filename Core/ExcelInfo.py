@@ -293,7 +293,7 @@ class ExcelInfo:
                     Warning("type error at [%s,%s] ,%s is not a Float"%(rowIndex,index,cell))
             elif Type==DataType.STRING:
                 cell=str(cell)
-                if cell=='':
+                if cell=='' or cell[0]==NameFlag.error:
                     continue
             elif  Type==DataType.BOOL:
                 cell = False if cell == 0 else True

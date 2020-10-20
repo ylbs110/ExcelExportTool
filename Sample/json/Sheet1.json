@@ -36,43 +36,5 @@
                 ]
             }
         ]
-    },
-    {
-        "name": "测试多级输出",
-        "code": "code2",
-        "Sheet2": [
-            {
-                "name": "测试多级输出",
-                "code": "code2",
-                "Sheet3": [
-                    {
-                        "name": "测试多级输出",
-                        "code": "code2",
-                        "Sheet4": [
-                            {
-                                "name": "测试多级输出",
-                                "code": "code2"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "测试多级输出",
-                "code": "code4",
-                "Sheet3": [
-                    {
-                        "name": "测试多级输出",
-                        "code": "code4",
-                        "Sheet4": [
-                            {
-                                "name": "测试多级输出",
-                                "code": "code4"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
     }
 ]
