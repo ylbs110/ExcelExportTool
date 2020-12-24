@@ -10,10 +10,11 @@
 - json可输出为便于阅读的格式化文件或是省空间的字符串文件
 
 ## 工具依赖
-- 基于python 3.6开发
+- 基于python 3.6开发，python3 3.6及以上都行
 - excel使用xlrd这个开源库解析
-  - xlrd http://pypi.python.org/pypi/xlrd
-  - 用pip命令安装xlrd :   pip install xlrd
+  - xlrd https://pypi.org/project/xlrd/1.2.0/
+  - 用pip命令安装xlrd :   pip install xlrd==1.2.0
+  - 注意最新的xlrd 2.0 一直无法正常读取excel文件，已安装的需要回退到1.2版
 
 ## 使用方法
 配置好Config.json后双击ExcelExportTool.bat进行文件转换
